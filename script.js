@@ -19,7 +19,10 @@ function getCoords() {
 getCoords();
 function listener() {
   weatherData = JSON.parse(this.responseText);
-  console.log(weatherData);
+  var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description;
+  var weatherInfo = [];
+  weatherInfo.push(city, temp, desc);
+  appendToDOM(weatherInfo);
 }
 function getWeather(lat, lon) {
   var key = 'c6ab22fb510471242d6784203ec9a3ff';
@@ -29,3 +32,12 @@ function getWeather(lat, lon) {
   request.open('GET', url);
   request.send();
 }
+
+function appendToDOM(arr) {
+  for (var i = 1, l = arr.length; i <= l; i++) {
+    var element = document.createTextNode(arr[i-1]);
+    var parent = document.getElementById('weather-' + i);
+    parent.appendChild(element);
+  }
+}
+
