@@ -1,6 +1,13 @@
 html{
   margin: 0;
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+html *,
+html *:before,
+html *:after {
+  box-sizing: inherit;
 }
 body {
   background: rgb(255,174,39); /* Old browsers */
@@ -21,8 +28,12 @@ body {
 li {
   display: inline;
   list-style: none;
-  color: white;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: lighter;
+  font-size: 2em;
 }
+#weather-1 {
+  display: block;
+}
+
+
