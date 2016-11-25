@@ -21,7 +21,7 @@ function listener() {
   weatherData = JSON.parse(this.responseText);
   var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description;
   var weatherInfo = [];
-  weatherInfo.push(city, temp, desc);
+  weatherInfo.push(city + ', ' + weatherData.sys.country, temp, desc);
   appendToDOM(weatherInfo);
 }
 function getWeather(lat, lon) {
