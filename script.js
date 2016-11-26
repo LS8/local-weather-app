@@ -21,12 +21,13 @@ function listener() {
   weatherData = JSON.parse(this.responseText);
   var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description, wind = weatherData.wind.speed;
   var weatherInfo = [];
-  weatherInfo.push(city + ', ' + weatherData.sys.country, desc, temp, wind + ' mph');
+  weatherInfo.push(city + ', ' + weatherData.sys.country, desc, temp  + ' ' + String.fromCharCode(176) + 'F', wind + ' mph');
   getIcon('icon', weatherData.weather[0].id, 'wi-owm-');
   getIcon('temp', 'wi-thermometer');
   getIcon('wind', 'wi-small-craft-advisory');
   getDate('date');
   appendToDOM(weatherInfo);
+  toggleUnit(temp);
 }
 function getWeather(lat, lon) {
   var key = 'c6ab22fb510471242d6784203ec9a3ff';
@@ -54,4 +55,19 @@ function getIcon(id, code, ref = false) {
 function getDate(id) {
   var d = new Date();
   document.getElementById(id).innerHTML = d.toDateString();
+}
+
+function toggleUnit(temp) {
+  var unit = document.getElementById('weather-3');
+  var fahrenheit = true;
+  unit.addEventListener('click', function(event) {
+    var toChange = this.childNodes[1];
+    if (fahrenheit) {
+      toChange.nodeValue = ((temp - 32)/1.8).toFixed(2) + ' ' + String.fromCharCode(176) + 'C';
+      fahrenheit = false;
+    } else {
+      toChange.nodeValue = temp + ' ' + String.fromCharCode(176) + 'F';
+      fahrenheit = true;
+    }
+  })
 }
