@@ -59,4 +59,7 @@ li {
   margin-right: .5em;
   color: white;
 }
-
+#weather-3 {
+  cursor: pointer;
+  text-decoration: underline;
+}
