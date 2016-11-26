@@ -19,11 +19,12 @@ function getCoords() {
 getCoords();
 function listener() {
   weatherData = JSON.parse(this.responseText);
-  var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description;
+  var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description, wind = weatherData.wind.speed;
   var weatherInfo = [];
-  weatherInfo.push(city + ', ' + weatherData.sys.country, temp, desc);
+  weatherInfo.push(city + ', ' + weatherData.sys.country, desc, temp, wind + ' mph');
   getIcon('icon', weatherData.weather[0].id, 'wi-owm-');
   getIcon('temp', 'wi-thermometer');
+  getIcon('wind', 'wi-small-craft-advisory');
   getDate('date');
   appendToDOM(weatherInfo);
 }
