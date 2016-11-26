@@ -22,13 +22,14 @@ function listener() {
   var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description;
   var weatherInfo = [];
   weatherInfo.push(city + ', ' + weatherData.sys.country, temp, desc);
-  getIcon('icon', weatherData.weather[0].id);
+  getIcon('icon', weatherData.weather[0].id, 'wi-owm-');
+  getIcon('temp', 'wi-thermometer');
   getDate('date');
   appendToDOM(weatherInfo);
 }
 function getWeather(lat, lon) {
   var key = 'c6ab22fb510471242d6784203ec9a3ff';
-  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=' + key;
+  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
   var request = new XMLHttpRequest();
   request.addEventListener('load', listener);
   request.open('GET', url);
@@ -42,9 +43,12 @@ function appendToDOM(arr) {
     parent.appendChild(element);
   }
 }
-function getIcon(id, code) {
+function getIcon(id, code, ref = false) {
   var icon = document.getElementById(id);
-  icon.className += ' wi-owm-' + code; 
+  if (ref)
+    icon.className += ' ' + ref + code; 
+  else
+    icon.className += ' ' + code;
 }
 function getDate(id) {
   var d = new Date();
