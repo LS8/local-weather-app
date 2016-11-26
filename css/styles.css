@@ -28,6 +28,10 @@ body {
 #output {
   margin-top: 5em;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
 li {
   list-style: none;
   color: rgba(255, 255, 255, 0.6);
