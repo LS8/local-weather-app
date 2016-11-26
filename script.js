@@ -23,6 +23,7 @@ function listener() {
   var weatherInfo = [];
   weatherInfo.push(city + ', ' + weatherData.sys.country, temp, desc);
   getIcon('icon', weatherData.weather[0].id);
+  getDate('date');
   appendToDOM(weatherInfo);
 }
 function getWeather(lat, lon) {
@@ -44,4 +45,8 @@ function appendToDOM(arr) {
 function getIcon(id, code) {
   var icon = document.getElementById(id);
   icon.className += ' wi-owm-' + code; 
+}
+function getDate(id) {
+  var d = new Date();
+  document.getElementById(id).innerHTML = d.toDateString();
 }
