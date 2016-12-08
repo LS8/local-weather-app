@@ -33,14 +33,13 @@ function listener(response) {
 function getWeather(lat, lon) {
   var cors = 'https://crossorigin.me/';
   var key = 'c6ab22fb510471242d6784203ec9a3ff';
-  // var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
-  var url = cors + 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
+  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
+  // var url = cors + 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
   console.log(url);
   var request = new XMLHttpRequest();
   //get rid of this
   // request.addEventListener('load', listener);
   request.open('GET', url);
-  request.setRequestHeader("Client-ID", key);
   request.onload = function() {
     if (this.status >= 200 && this.status < 400) {
       listener(this.responseText);
