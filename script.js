@@ -17,8 +17,9 @@ function getCoords() {
   navigator.geolocation.getCurrentPosition(succes, error);
 }
 getCoords();
-function listener() {
-  weatherData = JSON.parse(this.responseText);
+//make this on load
+function listener(response) {
+  weatherData = JSON.parse(response);
   var city = weatherData.name, temp = weatherData.main.temp, desc = weatherData.weather[0].description, wind = weatherData.wind.speed;
   var weatherInfo = [];
   weatherInfo.push(city + ', ' + weatherData.sys.country, desc, temp  + ' ' + String.fromCharCode(176) + 'F', wind + ' mph');
@@ -32,10 +33,24 @@ function listener() {
 function getWeather(lat, lon) {
   var cors = 'https://crossorigin.me/';
   var key = 'c6ab22fb510471242d6784203ec9a3ff';
+  // var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
   var url = cors + 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key;
+  console.log(url);
   var request = new XMLHttpRequest();
-  request.addEventListener('load', listener);
+  //get rid of this
+  // request.addEventListener('load', listener);
   request.open('GET', url);
+  request.setRequestHeader("Client-ID", key);
+  request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+      listener(this.responseText);
+    } else {
+      console.log("Server returned an Error#", this.status);
+    }
+  };
+  request.onerror = function() {
+    console.log('Connection Error');
+  };
   request.send();
 }
 
