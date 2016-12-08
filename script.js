@@ -19,9 +19,9 @@ function XHRequest(lat, lon) {
   var cors = 'https://crossorigin.me/',
   key = 'c6ab22fb510471242d6784203ec9a3ff',
   // Use this url for local usage
-  // url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key,
+  url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key,
   // and this for https (e.g github pages)
-  url = cors + 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key,
+  // url = cors + 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&APPID=' + key,
   request = new XMLHttpRequest();
   request.open('GET', url);
   request.onload = function() {
