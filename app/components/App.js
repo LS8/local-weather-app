@@ -3,15 +3,17 @@ const ReactRouter = require('react-router-dom');
 const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
-const Hello = require('./Hello');
+const Home = require('./Home');
+const Header = require('./Header');
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div className='container'>
+          <Header/>
           <Switch>
-            <Route exact path='/' component={Hello}/>
+            <Route exact path='/' component={Home}/>
             <Route render={function() {
               return <p>Not Found</p>
             }}/>
