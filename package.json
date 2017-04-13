@@ -26,7 +26,8 @@
   "homepage": "https://github.com/LS8/local-weather-app#readme",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
