@@ -1,0 +1,19 @@
+{
+  "name": "local-weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LS8/local-weather-app.git"
+  },
+  "author": "LS8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LS8/local-weather-app/issues"
+  },
+  "homepage": "https://github.com/LS8/local-weather-app#readme"
+}
