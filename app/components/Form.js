@@ -1,5 +1,4 @@
 const React = require('react');
-const api = require('../utils/api');
 const Link = require('react-router-dom').Link;
 const Redirect = require('react-router').Redirect;
 
@@ -30,7 +29,7 @@ class Form extends React.Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to={'/forecast/' + this.state.city} />;
+      return <Redirect push to={'/forecast/' + this.state.city} />;
     }
     return (
       <form onSubmit={this.handleSubmit} className={'weather-form ' + this.props.orientation}>
