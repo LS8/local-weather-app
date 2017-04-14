@@ -4,6 +4,7 @@ const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
 const Home = require('./Home');
+const Forecast = require('./Forecast');
 const Header = require('./Header');
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
           <Header/>
           <Switch>
             <Route exact path='/' component={Home}/>
+            <Route path='/forecast/:city' component={Forecast}/>
             <Route render={function() {
               return <p>Not Found</p>
             }}/>

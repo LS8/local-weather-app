@@ -45,7 +45,7 @@ function filterForecast(data) {
       description: day.weather[0].description
     };
     forecast.push(weatherData);
-  }, this);
+  });
   return forecast;
 }
 
