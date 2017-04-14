@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/LS8/local-weather-app#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1"

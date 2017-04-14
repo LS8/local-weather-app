@@ -1,4 +1,5 @@
 const React = require('react');
+const api = require('../utils/api');
 
 class Form extends React.Component {
   constructor(props) {
@@ -20,6 +21,10 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state.city);
+    api.currentWeather(this.state.city)
+      .then((data) => {
+        console.log(data)
+      });
   }
 
   render() {
