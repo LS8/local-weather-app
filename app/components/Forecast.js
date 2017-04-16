@@ -1,6 +1,6 @@
 const React = require('react');
 const api = require('../utils/api');
-const Loading = require('../components/Loading');
+const Loading = require('./Loading');
 
 class Forecast extends React.Component {
   constructor(props) {

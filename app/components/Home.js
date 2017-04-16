@@ -1,7 +1,7 @@
 const React = require('react');
 const Form = require('./Form');
 
-class HelloWorld extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div className='center'>
@@ -12,4 +12,4 @@ class HelloWorld extends React.Component {
   }
 };
 
-module.exports = HelloWorld;
+module.exports = Home;
