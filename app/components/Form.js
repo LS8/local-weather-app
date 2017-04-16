@@ -1,6 +1,7 @@
 const React = require('react');
-const Link = require('react-router-dom').Link;
 const Redirect = require('react-router').Redirect;
+const Button = require('./Button');
+const Input = require('./Input');
 
 class Form extends React.Component {
   constructor(props) {
@@ -33,8 +34,8 @@ class Form extends React.Component {
     }
     return (
       <form onSubmit={this.handleSubmit} className={'weather-form ' + this.props.orientation}>
-        <input onChange={this.handleChange} type='text' placeholder='St. George, Utah' value={this.state.city} />
-        <button type='submit'>Get Weather</button>
+        <Input city={this.state.city} handleChange={this.handleChange} />
+        <Button/>
       </form>
     )
   }

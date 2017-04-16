@@ -1,6 +1,7 @@
 const React = require('react');
 const api = require('../utils/api');
 const Loading = require('./Loading');
+const Header = require('./Header');
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -28,7 +29,10 @@ class Forecast extends React.Component {
     }
     return (
       <div>
-        Forecast component: {city}
+        <Header />
+        <div>
+          Forecast component: {city}
+        </div>
       </div>
     );
   }

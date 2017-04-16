@@ -5,14 +5,12 @@ const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
 const Home = require('./Home');
 const Forecast = require('./Forecast');
-const Header = require('./Header');
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div className='container'>
-          <Header/>
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/forecast/:city' component={Forecast}/>
