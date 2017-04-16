@@ -20,7 +20,7 @@ class Details extends React.Component {
     const day = this.props.day;
     return (
       <ul  onClick={this.handleClick} key={this.props.i}>
-          <li><img className='weather-icon' src={'/app/images/' + day.icon + '.svg'} /></li>
+          <li><img className='weather-icon' src={'/images/' + day.icon + '.svg'} /></li>
           <li><h3 className='day'>{convertDate(day.date)}</h3></li>
           <ul className={this.state.hidden ? 'hidden details' : 'details'}>
             <li>{day.location}</li>
