@@ -41,6 +41,7 @@ function filterForecast(data) {
       minTemp: day.temp.min,
       maxTemp: day.temp.max,
       humidity: day.humidity,
+      date: day.dt,
       location: location,
       description: day.weather[0].description,
       icon: day.weather[0].icon

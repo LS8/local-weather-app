@@ -10,6 +10,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -50,10 +60,12 @@ button:hover {
 }
 
 
-.header h1 {
+h1 {
   font-size: 38px;
   color: #fff;
   padding: 0;
+}
+.header h1 {
   margin-left: 16px;
 }
 
@@ -99,9 +111,37 @@ button:hover {
   margin-right: 16px;
 }
 
-.forecast {
+.forecast-days {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.forecast h1 {
+  display: block;
+  text-align: center;
+}
+
+.weather-icon {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+h3.day {
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  font-weight: 100;
+}
+
+.details {
+  transition: .3s linear;
+  cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
 }

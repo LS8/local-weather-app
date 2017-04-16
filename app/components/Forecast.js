@@ -1,6 +1,7 @@
 const React = require('react');
 const api = require('../utils/api');
 const Loading = require('./Loading');
+const Details = require('./Details');
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -25,27 +26,21 @@ class Forecast extends React.Component {
   }
 
   render() {
+    // console.log(convertDate(Date.now()));
     const city = this.props.match.params.city;
     if (this.state.loading) {
       return <Loading />
     }
     const forecast = this.state.forecast.map((day, i) => {
-      return (
-        <ul key={i}>
-          <li>{day.icon}</li>
-          <li><img src={'https://github.com/ReactTraining/react-fundamentals-curriculum/blob/master/app/images/weather-icons/' + day.icon + '.svg'} alt='Weather' /></li>
-          <li>{day.location}</li>
-          <li>{day.description}</li>
-          <li>min temp: {day.minTemp}°C</li>
-          <li>max temp: {day.maxTemp}°C</li>
-          <li>humidity: {day.humidity}</li>
-        </ul>
-      )
+      return <Details day={day} key={i}/>
     });
     return (
-        <div className='forecast'>
+      <div className='forecast'>
+        <h1>{this.state.forecast[0].location}</h1>
+        <div className='forecast-days'>
           {forecast}
-        </div>
+           </div>
+      </div>
     );
   }
 }
