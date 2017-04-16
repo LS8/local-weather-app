@@ -42,7 +42,8 @@ function filterForecast(data) {
       maxTemp: day.temp.max,
       humidity: day.humidity,
       location: location,
-      description: day.weather[0].description
+      description: day.weather[0].description,
+      icon: day.weather[0].icon
     };
     forecast.push(weatherData);
   });

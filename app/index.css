@@ -45,6 +45,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   border-bottom: 2px solid #fff;
 }
 
@@ -96,4 +97,11 @@ button:hover {
 
 #home-button {
   margin-right: 16px;
+}
+
+.forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

@@ -1,5 +1,4 @@
 const React = require('react');
-const Redirect = require('react-router').Redirect;
 const Button = require('./Button');
 const Input = require('./Input');
 
@@ -7,8 +6,7 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: '',
-      redirect: false
+      city: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,15 +21,11 @@ class Form extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState(() => {
-      return { redirect: true }
-    });
+    const origin = window.location.origin;
+    window.location = origin + '/forecast/' + this.state.city;
   }
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect push to={'/forecast/' + this.state.city} />;
-    }
     return (
       <form onSubmit={this.handleSubmit} className={'weather-form ' + this.props.orientation}>
         <Input city={this.state.city} handleChange={this.handleChange} />
