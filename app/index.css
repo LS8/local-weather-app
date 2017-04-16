@@ -139,7 +139,14 @@ h3.day {
 
 .details {
   transition: .3s linear;
+  font-weight: 100;
+  font-size: 19px;
   cursor: pointer;
+  color: #333;
+}
+
+.details li {
+  margin: 6px 0 6px 0;
 }
 
 .hidden {
