@@ -4,9 +4,9 @@ const Form = require('./Form');
 class Header extends React.Component {
   render() {
     return (
-      <div className='header'>
+      <div className='header row'>
         <h1>Weather</h1>
-        <Form orientation='horizontal'/>
+        <Form className='hidden-md-down' orientation='horizontal'/>
       </div>
     )
   }

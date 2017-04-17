@@ -27,7 +27,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className={'weather-form ' + this.props.orientation}>
+      <form onSubmit={this.handleSubmit} className={this.props.className + ' weather-form ' + this.props.orientation}>
         <Input city={this.state.city} handleChange={this.handleChange} />
         <Button/>
       </form>

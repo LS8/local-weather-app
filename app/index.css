@@ -11,6 +11,11 @@ body {
   padding: 0;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -151,4 +156,14 @@ h3.day {
 
 .hidden {
   opacity: 0;
+}
+
+@media screen and (max-width: 575px) {
+  .hidden-md-down {
+    display: none;
+  }
+  .header {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
 }
