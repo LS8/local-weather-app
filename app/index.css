@@ -34,9 +34,14 @@ input {
   border: none;
   border-radius: 5px;
   padding: 16px;
+  transition: .2s linear;
   -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+  border-radius: 10px;
 }
 
 button {
@@ -73,7 +78,14 @@ h1 {
 .header h1 {
   margin-left: 16px;
 }
-
+.header a {
+  text-decoration: none;
+  color: #fff;
+  transition: .2s linear;
+}
+.header a:hover {
+  color: #333;
+}
 
 .emphasis {
   color: #fff;
@@ -133,13 +145,22 @@ h1 {
   width: 200px;
   height: auto;
   cursor: pointer;
+  color: #fff;
+  transition: .5s ease-out;
+}
+.weather-icon:hover {
+  color: #333;
 }
 
 h3.day {
   font-size: 30px;
   color: #333;
   cursor: pointer;
+  transition: .5s ease-out;
   font-weight: 100;
+}
+h3.day:hover {
+  color: #fff;
 }
 
 .details {
